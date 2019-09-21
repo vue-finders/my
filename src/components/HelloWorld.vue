@@ -109,9 +109,13 @@ export default {
 	  		]
     	}
 	  },
+	  mounted(){
+		  this.activeName = sessionStorage.tabs;
+	  },
 	  methods:{
 		 	handleClick(tab, event) {
 				console.log(tab, event);
+				sessionStorage.tabs = tab.name;
 			}
 	  }
 }
@@ -287,6 +291,7 @@ export default {
 						padding: 4px 12px 4px 30px;
 						border-radius: 4px;
 						position: relative;
+						transition: all .2s ease;
 						&::before{
 							content:"";
 							width: 3px;
@@ -300,7 +305,6 @@ export default {
 						&:hover{
 							box-shadow: 0 0 10px #ccc;
 							background: #f2f2f2;
-							transition: all .2s ease;
 						}
 						a{
 							text-decoration: none;
