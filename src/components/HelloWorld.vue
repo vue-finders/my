@@ -110,7 +110,9 @@ export default {
     	}
 	  },
 	  mounted(){
-		  this.activeName = sessionStorage.tabs;
+		  if(sessionStorage.tabs){
+			  this.activeName = sessionStorage.tabs;
+		  }
 	  },
 	  methods:{
 		 	handleClick(tab, event) {
